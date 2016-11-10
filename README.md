@@ -10,13 +10,13 @@ For this we need to build a cluster, for this check out the following awesome pr
 
 ### Wire rPi to breadboard
 
-    [Turning on an LED with your Raspberry Pi's GPIO Pins](https://thepihut.com/blogs/raspberry-pi-tutorials/27968772-turning-on-an-led-with-your-raspberry-pis-gpio-pins)
+[Turning on an LED with your Raspberry Pi's GPIO Pins](https://thepihut.com/blogs/raspberry-pi-tutorials/27968772-turning-on-an-led-with-your-raspberry-pis-gpio-pins)
 
 ### Start a Camel route using Pi4J
 
   This route that toggles the state of the GPIO pin every second.
 
-        from("timer:default?period=1000").to("pi4j-gpio://GPIO_01?mode=DIGITAL_OUTPUT&state=LOW&action=TOGGLE").to("log:default?showHeaders=true");
+        from("timer:default?period=1000").to("pi4j-gpio://GPIO_01?mode=DIGITAL_OUTPUT&state=LOW&action=TOGGLE");
 
 ### Build a fat jar
 
@@ -88,7 +88,9 @@ For this we need to build a cluster, for this check out the following awesome pr
         </configuration>
       </plugin>
 
-      NB Base image is Hypriot's Java 8 for rPi, to this we add the far-jar and configure the entry-point.
+      NB Base image is Hypriot's Java 8 for rPi, to this we add the far-jar and configure the entry-point, with the following command;
+
+      mvn clean install
 
 
 ### test Docker
