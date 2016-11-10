@@ -2,7 +2,7 @@
 
 Demonstrates using Kubernetes by deploying a container that toggles LEDs, in order to discuss key concepts such as deployment, services, labels, node selection, scaling, privileges etc.
 
-For this we need to build a cluster, for this check out the following awesome projects;
+First we need to build a cluster, for this check out the following awesome projects;
 
 [A Raspberry Pi 3 Kubernetes Cluster](https://ro14nd.de/kubernetes-on-raspberry-pi3)
 
