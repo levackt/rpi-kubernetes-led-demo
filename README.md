@@ -14,7 +14,7 @@ First we need to build a cluster, for this check out the following awesome proje
 
 ### Start a Camel route using Pi4J
 
-  This route that toggles the state of the GPIO pin every second.
+  This route toggles the state of the GPIO pin every second.
 
         from("timer:default?period=1000").to("pi4j-gpio://GPIO_01?mode=DIGITAL_OUTPUT&state=LOW&action=TOGGLE");
 
