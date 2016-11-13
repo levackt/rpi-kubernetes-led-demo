@@ -1,4 +1,4 @@
-# kubernetes-led-demo
+# rpi-kubernetes-led-demo
 
 
 Demonstrates using Kubernetes by deploying a container that toggles LEDs, in order to discuss key concepts such as deployment, services, labels, node selection, scaling, privileges etc.
