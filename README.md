@@ -16,7 +16,7 @@ First we need to build a cluster, for this check out the following awesome proje
 
   This route toggles the state of the GPIO pin every second.
 
-        from("timer:default?period=1000").to("pi4j-gpio://GPIO_01?mode=DIGITAL_OUTPUT&state=LOW&action=TOGGLE");
+        from("timer:default?period=1000").to("pi4j-gpio://GPIO_01?action=TOGGLE");
 
 ### Build a fat jar
 
