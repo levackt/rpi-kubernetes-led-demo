@@ -1,0 +1,2 @@
+# To keep the main thread blocked so that Camel stays up
+camel.springboot.main-run-controller: true
