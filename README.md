@@ -1,5 +1,6 @@
 # kubernetes-led-demo
 
+
 Demonstrates using Kubernetes by deploying a container that toggles LEDs, in order to discuss key concepts such as deployment, services, labels, node selection, scaling, privileges etc.
 
 First we need to build a cluster, for this check out the following awesome projects;
@@ -46,7 +47,6 @@ First we need to build a cluster, for this check out the following awesome proje
       sudo java -jar target/kubernetes-led-demo.jar
 
 
-
 ### Now build the docker image and Kubernetes manifest
 
  See [fabric8-maven-plugin](https://github.com/fabric8io/fabric8-maven-plugin)
@@ -88,14 +88,24 @@ First we need to build a cluster, for this check out the following awesome proje
         </configuration>
       </plugin>
 
-      NB Base image is Hypriot's Java 8 for rPi, to this we add the far-jar and configure the entry-point, with the following command;
+      NB Base image is Hypriot's Java 8 for rPi, to this we add the far-jar and configure the entry-point;
 
       mvn clean install
 
 
+You can also run a prebuilt image that toggles the state of GPIO_01
+
+    docker run -it --privileged taariq/rpi-kubernetes-led-demo:1.0-SNAPSHOT
+
+or specify a different pin
+
+    docker run -e gpioId=GPIO_02 -it --privileged taariq/rpi-kubernetes-led-demo:1.0-SNAPSHOT
+
 ### test Docker
-  docker run -it --privileged --rm kubernetes-led-demo:1.0-SNAPSHOT
+  docker run -it --privileged --rm rpi-kubernetes-led-demo:1.0-SNAPSHOT
 
   NB Run the container as privileged so wiringPi can access the device ( /dev/mem )
 
-todo Lots left to do, fabric8 plugin commands, kubectl, label nodes etc
+todo
+* fabric8-maven-plugin commands
+* kubectl to label nodes etc
